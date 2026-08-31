@@ -1,19 +1,6 @@
-"use client";
-
-import { useState } from "react";
-
-const journeys = [
-  "Build discipline",
-  "Improve my career",
-  "Study better",
-  "Build confidence",
-  "Find direction",
-  "Something else",
-];
+import AuralithGuide from "@/components/AuralithGuide";
 
 export default function Home() {
-  const [selected, setSelected] = useState<string | null>(null);
-
   return (
     <main className="min-h-screen bg-[#f8f7f2] text-[#17211b]">
       {/* Navigation */}
@@ -26,19 +13,38 @@ export default function Home() {
         </a>
 
         <nav className="hidden items-center gap-8 text-sm text-[#43534a] md:flex">
-          <a href="#how-it-works" className="transition hover:text-[#183f31]">
+          <a
+            href="#how-it-works"
+            className="transition hover:text-[#183f31]"
+          >
             How it works
           </a>
-          <a href="#support" className="transition hover:text-[#183f31]">
+
+          <a
+            href="#support"
+            className="transition hover:text-[#183f31]"
+          >
             Programmes
           </a>
-          <a href="#sanctuary" className="transition hover:text-[#183f31]">
+
+          <a
+            href="#sanctuary"
+            className="transition hover:text-[#183f31]"
+          >
             Sanctuary
           </a>
-          <a href="#zenithra" className="transition hover:text-[#183f31]">
+
+          <a
+            href="#zenithra"
+            className="transition hover:text-[#183f31]"
+          >
             Zenithra
           </a>
-          <a href="#about" className="transition hover:text-[#183f31]">
+
+          <a
+            href="#about"
+            className="transition hover:text-[#183f31]"
+          >
             About
           </a>
         </nav>
@@ -50,6 +56,7 @@ export default function Home() {
 
       {/* Hero */}
       <section className="mx-auto grid min-h-[78vh] max-w-7xl items-center gap-14 px-6 pb-20 pt-12 lg:grid-cols-[1.08fr_0.92fr] lg:px-10 lg:pt-16">
+        {/* Hero left */}
         <div>
           <div className="mb-7 inline-flex rounded-full border border-[#b99a5d]/30 bg-[#f2ead8] px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-[#765f32]">
             Understand • Guide • Act • Grow
@@ -67,8 +74,9 @@ export default function Home() {
           </p>
 
           <p className="mt-5 max-w-xl text-base leading-7 text-[#718078]">
-            No pressure. No instant sales pitch. Start with where you are, and
-            we&apos;ll work out what could help.
+            You do not need to know exactly what the problem is. Tell us what
+            you want to change, achieve, improve or understand, and we will
+            help you find a starting point.
           </p>
 
           <div className="mt-9 flex flex-wrap items-center gap-4">
@@ -88,101 +96,48 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Guided entry card */}
-        <div
-          id="start"
-          className="rounded-[2rem] border border-[#183f31]/10 bg-white p-7 shadow-[0_30px_80px_rgba(31,55,44,0.10)] sm:p-9"
-        >
-          <div className="mb-8 flex items-center gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#e6efe9] text-lg text-[#24543f]">
-              ✦
-            </div>
-
-            <div>
-              <p className="text-sm font-semibold text-[#1e3f31]">
-                Auralith Guide
-              </p>
-              <p className="text-xs text-[#87928c]">
-                Let&apos;s start with one question.
-              </p>
-            </div>
-          </div>
-
-          <h2 className="text-2xl font-medium leading-9 tracking-[-0.02em] text-[#18271f]">
-            What would you most like to change or achieve right now?
-          </h2>
-
-          <div className="mt-7 grid gap-3 sm:grid-cols-2">
-            {journeys.map((journey) => (
-              <button
-                key={journey}
-                onClick={() => setSelected(journey)}
-                className={`rounded-2xl border px-5 py-4 text-left text-sm font-medium transition ${
-                  selected === journey
-                    ? "border-[#2f6b52] bg-[#edf4ef] text-[#183f31]"
-                    : "border-[#dfe5e1] bg-[#fbfcfb] text-[#4b5b53] hover:border-[#8eaa9d] hover:bg-[#f5f8f6]"
-                }`}
-              >
-                {journey}
-              </button>
-            ))}
-          </div>
-
-          {selected && (
-            <div className="mt-7 rounded-2xl bg-[#f3f0e7] p-5">
-              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[#92733c]">
-                Your starting point
-              </p>
-
-              <p className="mt-2 text-sm leading-6 text-[#4e574f]">
-                You chose <strong>{selected}</strong>. Next, Auralith will ask
-                a few useful questions to understand what&apos;s happening
-                before suggesting your next step.
-              </p>
-
-              <button className="mt-4 rounded-full bg-[#183f31] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#215440]">
-                Continue →
-              </button>
-            </div>
-          )}
-
-          <p className="mt-6 text-center text-xs leading-5 text-[#929c96]">
-            You don&apos;t need to have everything figured out before you
-            begin.
-          </p>
+        {/* Auralith Guide */}
+        <div id="start">
+          <AuralithGuide />
         </div>
       </section>
 
-      {/* Philosophy strip */}
+      {/* Philosophy */}
       <section
         id="how-it-works"
         className="border-y border-[#183f31]/10 bg-[#eef1eb]"
       >
-        <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10">
+        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
           <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-[#718078]">
-            The Auralith approach
+            The Auralith Approach
           </p>
 
           <h2 className="mx-auto mt-4 max-w-2xl text-center text-3xl font-medium tracking-[-0.03em] text-[#17271f] sm:text-4xl">
             Progress starts with understanding.
           </h2>
 
+          <p className="mx-auto mt-5 max-w-2xl text-center leading-7 text-[#68756e]">
+            We do not begin by trying to sell you something. We begin by
+            understanding what you want to change and what may be getting in
+            the way.
+          </p>
+
           <div className="mt-12 grid gap-5 md:grid-cols-3">
             {[
               {
                 number: "01",
                 title: "Understand",
-                text: "We begin with your goal, where you are now, and what is making progress difficult.",
+                text: "Tell Auralith what you want to improve, achieve or change. It can be career, money, relationships, wellbeing, study, confidence, habits or something completely different.",
               },
               {
                 number: "02",
                 title: "Guide",
-                text: "Auralith helps turn a vague ambition into a clearer direction and realistic next steps.",
+                text: "We help you turn a broad problem or ambition into a clearer direction and identify realistic next steps.",
               },
               {
                 number: "03",
-                title: "Act & grow",
-                text: "Use guided actions, programmes and support to make progress you can actually sustain.",
+                title: "Act & Grow",
+                text: "Choose the support that makes sense for you and keep moving forward through actions, programmes, tools and guidance.",
               },
             ].map((item) => (
               <div
@@ -192,9 +147,11 @@ export default function Home() {
                 <span className="text-xs font-semibold tracking-[0.16em] text-[#a18349]">
                   {item.number}
                 </span>
+
                 <h3 className="mt-5 text-xl font-semibold text-[#1d392d]">
                   {item.title}
                 </h3>
+
                 <p className="mt-3 text-sm leading-6 text-[#68756e]">
                   {item.text}
                 </p>
@@ -204,57 +161,203 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Support preview */}
-      <section id="support" className="mx-auto max-w-7xl px-6 py-24 lg:px-10">
+      {/* Support ecosystem */}
+      <section
+        id="support"
+        className="mx-auto max-w-7xl px-6 py-24 lg:px-10"
+      >
         <div className="grid gap-12 lg:grid-cols-2">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#96763d]">
-              One ecosystem
+              One Ecosystem
             </p>
 
             <h2 className="mt-4 max-w-xl text-4xl font-medium tracking-[-0.035em] text-[#17271f]">
-              The right support should depend on what you need.
+              Different people need different kinds of support.
             </h2>
           </div>
 
           <div className="max-w-xl text-base leading-7 text-[#66736c]">
-            Auralith can guide you toward free resources, structured
-            development programmes, Zenithra, or eventually human coaching
-            when deeper support is appropriate.
+            Auralith is more than a collection of courses. The goal is to
+            understand what you need first, then help you choose an appropriate
+            path forward.
           </div>
         </div>
 
         <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           {[
-            ["30-Day Challenge", "Focused action and daily development."],
-            ["Zenithra", "Your long-term development companion."],
-            ["Sanctuary", "Free space for calm, focus and reflection."],
-            ["Human Support", "Coaching when technology is not enough."],
-          ].map(([title, text]) => (
+            {
+              title: "7-Day Guidance",
+              text: "A short guided starting point when you need clarity, direction and momentum.",
+            },
+            {
+              title: "30-Day Challenge",
+              text: "Structured daily guidance designed to turn intention into consistent action.",
+            },
+            {
+              title: "Zenithra",
+              text: "Your long-term digital companion for goals, reflection, progress and personal development.",
+            },
+            {
+              title: "Human Support",
+              text: "A future pathway to appropriate coaching and professional human support when technology alone is not enough.",
+            },
+          ].map((item) => (
             <div
-              key={title}
-              className="rounded-3xl border border-[#183f31]/10 bg-white p-6"
+              key={item.title}
+              className="rounded-3xl border border-[#183f31]/10 bg-white p-6 transition hover:-translate-y-1 hover:shadow-lg"
             >
-              <h3 className="font-semibold text-[#1c3b2e]">{title}</h3>
-              <p className="mt-3 text-sm leading-6 text-[#748079]">{text}</p>
+              <h3 className="font-semibold text-[#1c3b2e]">
+                {item.title}
+              </h3>
+
+              <p className="mt-3 text-sm leading-6 text-[#748079]">
+                {item.text}
+              </p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Sanctuary */}
+      <section
+        id="sanctuary"
+        className="border-y border-[#183f31]/10 bg-[#f0f3ed]"
+      >
+        <div className="mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-2 lg:px-10">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#96763d]">
+              Sanctuary
+            </p>
+
+            <h2 className="mt-4 text-4xl font-medium tracking-[-0.035em] text-[#17271f]">
+              Sometimes progress starts with becoming still.
+            </h2>
+          </div>
+
+          <div>
+            <p className="text-base leading-7 text-[#66736c]">
+              Sanctuary will provide a free space inside Auralith for calm,
+              reflection and focus through carefully selected calming content,
+              mindfulness experiences, nature, music and guided reflection.
+            </p>
+
+            <p className="mt-5 text-sm font-semibold text-[#2f6b52]">
+              Free to explore • No purchase required
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Zenithra */}
+      <section
+        id="zenithra"
+        className="mx-auto max-w-7xl px-6 py-24 lg:px-10"
+      >
+        <div className="rounded-[2rem] bg-[#183f31] px-8 py-14 text-white lg:px-14">
+          <div className="grid items-center gap-12 lg:grid-cols-2">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#d4bd89]">
+                Meet Zenithra
+              </p>
+
+              <h2 className="mt-5 text-4xl font-medium tracking-[-0.04em] sm:text-5xl">
+                Your journey should not end when you close the browser.
+              </h2>
+            </div>
+
+            <div>
+              <p className="text-base leading-7 text-[#c9d6d0]">
+                Zenithra is being designed as the long-term companion to the
+                Auralith experience — helping you remember your goals, track
+                progress, reflect, build habits and continue moving forward.
+              </p>
+
+              <button className="mt-7 rounded-full bg-[#f3e7c8] px-6 py-3 text-sm font-semibold text-[#173d30] transition hover:bg-white">
+                Discover Zenithra →
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Coaches */}
+      <section className="border-y border-[#183f31]/10 bg-white">
+        <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10">
+          <div className="grid gap-12 lg:grid-cols-2">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#96763d]">
+                Work With Auralith
+              </p>
+
+              <h2 className="mt-4 max-w-xl text-4xl font-medium tracking-[-0.035em] text-[#17271f]">
+                Are you a coach or qualified professional interested in
+                supporting people?
+              </h2>
+            </div>
+
+            <div>
+              <p className="text-base leading-7 text-[#66736c]">
+                We are building a future network of professionals who share our
+                belief that people deserve thoughtful, respectful and
+                practical support.
+              </p>
+
+              <p className="mt-4 text-base leading-7 text-[#66736c]">
+                We welcome expressions of interest from coaches and suitably
+                qualified professionals who may want to work with Auralith as
+                the platform develops.
+              </p>
+
+              <button className="mt-7 rounded-full border border-[#183f31] px-6 py-3 text-sm font-semibold text-[#183f31] transition hover:bg-[#183f31] hover:text-white">
+                Register your interest →
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About */}
+      <section
+        id="about"
+        className="mx-auto max-w-7xl px-6 py-24 lg:px-10"
+      >
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#96763d]">
+            Why Auralith?
+          </p>
+
+          <h2 className="mt-5 text-4xl font-medium tracking-[-0.035em] text-[#17271f]">
+            Knowing what to do is not always enough.
+          </h2>
+
+          <p className="mt-6 text-lg leading-8 text-[#66736c]">
+            Many people already know they want something better. The difficult
+            part is understanding where to begin, staying consistent and
+            continuing when motivation disappears.
+          </p>
+
+          <p className="mt-5 text-lg leading-8 text-[#66736c]">
+            Auralith is being built to help close that gap — from intention to
+            direction, from direction to action, and from action to meaningful
+            progress.
+          </p>
         </div>
       </section>
 
       {/* Closing CTA */}
       <section className="mx-4 mb-4 rounded-[2rem] bg-[#173d30] px-6 py-20 text-center text-white sm:mx-6 lg:mx-8">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#c9b27e]">
-          Your next step does not need to be huge.
+          You do not need to solve everything today.
         </p>
 
         <h2 className="mx-auto mt-5 max-w-3xl text-4xl font-medium tracking-[-0.04em] sm:text-5xl">
-          Start by understanding where you are.
+          Start with one honest conversation.
         </h2>
 
         <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-[#c7d4ce]">
-          A few thoughtful questions can turn “I feel stuck” into something you
-          can begin working on.
+          Tell Auralith where you are and where you want to go. We will start
+          from there.
         </p>
 
         <a
@@ -266,14 +369,40 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="mx-auto flex max-w-7xl flex-col gap-5 px-6 py-10 text-sm text-[#78847d] sm:flex-row sm:items-center sm:justify-between lg:px-10">
-        <span className="font-semibold tracking-[0.16em] text-[#28483a]">
-          AURALITH
-        </span>
+      <footer className="mx-auto max-w-7xl px-6 py-12 lg:px-10">
+        <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
+          <div>
+            <span className="font-semibold tracking-[0.16em] text-[#28483a]">
+              AURALITH
+            </span>
 
-        <p>Guidance for meaningful, sustainable progress.</p>
+            <p className="mt-3 max-w-sm text-sm leading-6 text-[#78847d]">
+              Guidance for meaningful, sustainable progress.
+            </p>
+          </div>
 
-        <p>© 2026 Auralith</p>
+          <div className="flex flex-wrap gap-6 text-sm text-[#78847d]">
+            <a href="#" className="hover:text-[#183f31]">
+              Privacy
+            </a>
+
+            <a href="#" className="hover:text-[#183f31]">
+              Terms
+            </a>
+
+            <a href="#" className="hover:text-[#183f31]">
+              Cookies
+            </a>
+
+            <a href="#" className="hover:text-[#183f31]">
+              Contact
+            </a>
+          </div>
+        </div>
+
+        <div className="mt-10 border-t border-[#183f31]/10 pt-6 text-sm text-[#8a958f]">
+          © 2026 Auralith. All rights reserved.
+        </div>
       </footer>
     </main>
   );
